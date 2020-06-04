@@ -1,10 +1,9 @@
 #!/bin/bash -x
-pat=^[[:upper:]][[:lower:]]*$ 
+pat="^[[:digit:]]{2}[ ]{1}[[:digit:]]{10}$"
 read a
 if [[ $a =~ $pat ]]
 then
-      echo "valid Last Name"
+      echo "valid number"
 else
-   echo "Invalid Last Name"
+   echo "Invalid number"
 fi
-
