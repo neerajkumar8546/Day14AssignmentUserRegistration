@@ -1,12 +1,10 @@
 #!/bin/bash -x
-
 pat=^[[:upper:]][[:lower:]]*$ 
-
-read -p "Enter First Name : " name
-
-if [[ $name =~ $pat ]]
+read a
+if [[ $a =~ $pat ]]
 then
-		echo "valid First Name"
+      echo "valid Last Name"
 else
-	echo "Invalid First name"
+   echo "Invalid Last Name"
 fi
+
