@@ -12,8 +12,11 @@ then
 		if [[ $lastname =~ $pat2 ]]
 		then
 			    read -p "Enter a email:" email;
-				regex="^[A-Za-z0-9]+([._-+][0-9a-zA-Z]+)*@[0-9a-zA-Z]+.[a-zA-Z]{2,4}([.][a-zA-Z]{2})$"
-				if [[ $email =~ $regex ]] 
+				regex="^[a-z0-9]+([._+-][0-9a-z]+)@+[a-zA-Z]+.[a-z]{2,4}([.][a-z]{2}$)"
+				regex1="^[a-z0-9]+([._+-][0-9a-z]+)@+[a-z0-9]+.[a-z]{2,4}$"
+				regex2="(^[a-z0-9]+)@+[a-z0-9]+.[a-z]{2,4}([.][a-z]{2}$)"
+				regex4="(^[a-z0-9]+)@+[a-z0-9]+.[a-z]{2,4}$"
+				if [[ $email =~ $regex ]] || [[ $email =~ $regex1 ]] || [[ $email =~ $regex2 ]] || [[ $email =~ $regex4 ]]
 				then
 						  
 						    pat4="^[[:digit:]]{2}[ ]{1}[[:digit:]]{10}$"
