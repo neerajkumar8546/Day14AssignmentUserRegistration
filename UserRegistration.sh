@@ -1,6 +1,6 @@
 #!/bin/bash -x
 
-pat=^[[:upper:]][[:lower:]]*$ 
+pat=^[[:upper:]][a-zA-Z]{3,}$ 
 
 read -p "Enter First Name : " name
 
