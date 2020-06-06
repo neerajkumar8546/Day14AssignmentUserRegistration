@@ -1,13 +1,13 @@
 #!/bin/bash -x
 shopt -s extglob
 
-pat1=^[[:upper:]][[:lower:]]{3,}$ 
+pat1=^[[:upper:]][a-zA-Z]{3,}$ 
 read -p "Enter First Name : " firstname
 
 if [[ $firstname =~ $pat1 ]]
 then
 		
-		pat2=^[[:upper:]][[:lower:]]{3,}$ 
+		pat2=^[[:upper:]][a-zA-Z]{3,}$ 
 		read -p "Enter Last Name : " lastname
 		if [[ $lastname =~ $pat2 ]]
 		then
