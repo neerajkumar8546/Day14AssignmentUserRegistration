@@ -1,5 +1,5 @@
 #!/bin/bash -x
-pat=^[[:upper:]][[:lower:]]*$ 
+pat=^[[:upper:]][a-zA-Z]{3,}$ 
 read a
 if [[ $a =~ $pat ]]
 then
