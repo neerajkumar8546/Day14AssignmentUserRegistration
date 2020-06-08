@@ -35,8 +35,35 @@ then
                                     					if [[ $pass =~ $pat7 ]]
                                     					then
                                         					
-														pat8=[@#.*]{1}
-                                    					if [[ $pass =~ $pat8 ]]
+														length=${#pass} #find length of password
+														num=0
+														#pat8=[@#.*]{1}
+														
+														for (( i=$num; i<$length;i++ ))
+														do
+																#echo "${pass:$i:1}"
+																
+															if [ -z $(echo "${pass:$i:1}" | sed -e 's/[0-9]//g') ]
+															then
+																#echo "$char is Number/digit"
+																((number++))
+															elif [ -z $(echo "${pass:$i:1}" | sed  -e 's/[A-Z]//g') ] # find out if character is upper
+															then
+																	#echo "$char is UPPER character"
+																	((upper++))
+															 
+															elif [ -z $(echo "${pass:$i:1}" | sed -e 's/[a-z]//g') ] # find out if character is lower
+															then
+																	#echo "$char is lower character"
+																	((lower++))
+															else
+																#echo "$char is Special symbol" # else it is special character
+																((special++)) 
+															fi
+														done
+														
+														#check condition special character is exactly one
+														if [[ 1 -eq $special ]]
                                     					then
                                         					
 															echo "Rule 4 Passed"
